@@ -6,18 +6,29 @@ const special = /[!@#$%^&*()]/;
 const minValue = 10;
 
 const validatePassword = (password) => {
-
-    if (password.length >= minValue) {
-        if (letters.test(password) && numbers.test(password)) {
-            if (special.test(password)){
-                return 'Very good password!'
+    if (password) {
+        if (password.length >= minValue) {
+            if (letters.test(password) && numbers.test(password)) {
+                if (special.test(password)) {
+                    return 'Excellent password!'
+                }
+                return 'Good password!'
+            } else {
+                return 'Password needs to contain both letters and numbers'
             }
-            return 'Good password!'
-        } else {
-            return 'Password needs to contain both letters and numbers'
-        }
 
+        } else {
+            return 'Password is too short'
+        }
     } else {
-        return 'Password is too short'
+        return 'Password cannot be empty'
     }
 }
+
+
+pass.addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+        e.preventDefault()
+        p.textContent = validatePassword(pass.value)
+    }
+})
