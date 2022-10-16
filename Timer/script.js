@@ -1,25 +1,34 @@
+let settings, settingsBtn, imageSection, eventName, eventDay, eventMonth, eventYear, eventImg,
+    daysCount, hoursCount, minutesCount, secondsCount, saveBtn, eventSpan
+
+const main = () => {
+    prepareDOMElements()
+    prepareDOMEvents()
+}
+
 const prepareDOMElements = () => {
-    const settings = document.querySelector('.settings');
-    const settingsBtn = document.querySelector('.settings-btn');
-    const imageSection = document.querySelector('.image-section');
-
-    const eventName = document.querySelector('#event-name');
-    const eventDay = document.querySelector('#event-day');
-    const eventMonth = document.querySelector('#event-month');
-    const eventYear = document.querySelector('#event-year');
-    const eventImg = document.querySelector('#event-image');
-
-    const daysCount = document.querySelector('.days-count');
-    const hoursCount = document.querySelector('.hours-count');
-    const minutesCount = document.querySelector('.minutes-count');
-    const secondsCount = document.querySelector('.seconds-count');
-
-    const saveBtn = document.querySelector('.save');
-
-    const eventSpan = document.querySelector('.event');
-    let usersTime;
+    settings = document.querySelector('.settings');
+    settingsBtn = document.querySelector('.settings-btn');
+    imageSection = document.querySelector('.image-section');
+    eventName = document.querySelector('#event-name');
+    eventDay = document.querySelector('#event-day');
+    eventMonth = document.querySelector('#event-month');
+    eventYear = document.querySelector('#event-year');
+    eventImg = document.querySelector('#event-image');
+    daysCount = document.querySelector('.days-count');
+    hoursCount = document.querySelector('.hours-count');
+    minutesCount = document.querySelector('.minutes-count');
+    secondsCount = document.querySelector('.seconds-count');
+    saveBtn = document.querySelector('.save');
+    eventSpan = document.querySelector('.event');
 }
 
 const prepareDOMEvents = () => {
+    settingsBtn.addEventListener('click', () => {
+        settings.classList.toggle('active');
+    })
 }
+
+main()
+
 
